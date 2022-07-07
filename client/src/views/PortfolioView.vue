@@ -45,7 +45,7 @@ export default {
   data() {
     return {
       projects: [],
-      pathimages: 'https://danielmaestre.es'
+      pathimages: 'https://danielmaestre.es/api'
     };
   },
   created() {

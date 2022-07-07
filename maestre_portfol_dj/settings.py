@@ -44,11 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'portfolio',
     'rest_framework',
     'rest_framework.authtoken',
     # 'webpack_loader',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -74,10 +74,21 @@ CORS_ORIGIN_WHITELIST = (
     # React
     'http://localhost:3000',
     'http://127.0.0.1:3000',
+
+    'https://danielmaestre.es',
+    'https://www.danielmaestre.es'
 )
 
-CORS_ALLOW_HEADERS = list(default_headers) + [
-    'contenttype',
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
 ]
 
 ROOT_URLCONF = 'maestre_portfol_dj.urls'
@@ -147,7 +158,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static',]
+# STATICFILES_DIRS = [BASE_DIR / 'static',]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
