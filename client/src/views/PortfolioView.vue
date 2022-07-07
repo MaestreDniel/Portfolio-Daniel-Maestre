@@ -3,12 +3,12 @@
     <div class="relative max-w-7xl mx-auto">
       <div class="text-center">
         <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
-          Estamos en portfolio
+          Estamos en portfolio, prueba
         </h2>
       </div>
       <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
         <div
-          v-for="project in APIData"
+          v-for="project in projects"
           :key="project.id"
           class="flex flex-col rounded-lg shadow-lg overflow-hidden"
         >
@@ -44,17 +44,17 @@ export default {
   name: "PortfolioView",
   data() {
     return {
-      APIData: [],
-      pathimages: 'http://127.0.0.1:8000'
+      projects: [],
+      pathimages: 'https://danielmaestre.es'
     };
   },
   created() {
     getAPI
-      .get("/portfolio/proyectos/")
+      .get("/proyectos/")
       .then((response) => {
         console.log("Post API has recieved data");
-        this.APIData = response.data;
-        console.log(this.APIData);
+        this.projects = response.data;
+        console.log(this.projects);
       })
       .catch((err) => {
         console.log(err);

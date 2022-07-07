@@ -1,10 +1,5 @@
 # Create your views here.
 
-""" def index(request):
-    context = {}
-
-    return render(request, 'portfolio/index.html', context) """
-
 from django.shortcuts import get_object_or_404, render
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -12,6 +7,10 @@ from rest_framework.response import Response
 from portfolio.models import Project
 from portfolio.serializers import ProjectSerializer
 
+def index(request):
+    context = {}
+
+    return render(request, 'portfolio/index.html', context)
 
 class PortfolioListView(APIView):
     def get(self, request, *args, **kwargs):
