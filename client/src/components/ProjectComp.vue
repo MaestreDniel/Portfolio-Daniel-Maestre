@@ -5,7 +5,8 @@
     <div class="card-body">
       <h5 class="card-title">{{ project.title }}</h5>
       <p class="card-text">{{ project.content }}</p>
-      <a href="#" class="btn btn-primary">Ver proyecto</a>
+      <a href="#" class="btn btn-primary mx-2">Ver proyecto</a>
+      <a href="#" class="btn btn-outline-primary mx-2">Más detalles</a>
     </div>
   </div>
   <!-- Fin Proyecto -->

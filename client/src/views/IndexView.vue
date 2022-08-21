@@ -1,16 +1,19 @@
 <template>
-  <div class="container-fluid text-center text-light bg-main-grad">
-    <div class="row d-flex align-items-center justify-content-around m-3">
-      <h1 class="col-10 col-md-5">
-        ¡Hola! Soy Daniel Maestre. Me alegro de que estés aquí.
-      </h1>
-      <p class="col-10 col-md-5">
-        Me apasiona desarrollar aplicaciones web. Estoy abierto a nuevas oportunidades para seguir
-        aprendiendo. Soy una persona disciplinada, creativa, y que presta atención a los pequeños
-        detalles.
+  <div class="container-fluid text-start text-light bg-main">
+    <div class="row d-flex viewport-h-100 align-content-center justify-content-around mx-5">
+      <h1 class="col-12 transition-one my-3" @click="animate">Tus ideas: deste tu mente hasta la web.</h1>
+      <p class="col-12 transition-one my-3">
+        Soy Daniel Maestre. Me dedico al <b>desarrollo web</b> y soy de Palma de Mallorca. Tengo habilidad tanto para
+        front-end como para back-end. Soy alguien versátil para las tecnologías y me mantengo
+        siempre al día para afrontar los retos de esta profesión.
       </p>
+      <div class="my-4">
+        <a href="#" class="btn btn-primary me-2">Saber más</a>
+        <a href="#" class="btn btn-outline-primary mx-2">Quiero contactar</a>
+      </div>
     </div>
-    <!-- <img src="@/assets/waves/wave.svg" class="bg-wave" /> -->
+  </div>
+  <div class="container-fluid text-center text-light bg-main-grad">
     <h2>He desarrollado estos proyectos:</h2>
     <section class="container">
       <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -19,43 +22,62 @@
         </article>
       </div>
     </section>
-    <!-- <router-link
-      :to="{
-        name: 'ProjectView',
-        params: {
-          id: project.id,
-          title: project.title,
-          thumbnail: project.thumbnail,
-          slug: project.slug,
-          content: project.content,
-        },
-      }"
-    >
-      <p>{{ project.title }}</p>
-    </router-link> -->
+    <div class="d-flex viewport-h-100 justify-content-center align-items-center">
+      <div v-for="skill in skills" :key="skill.title">
+        <SkillComp v-show="skill.current" :skill="skill" class="align-self-start" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import ProjectComp from "@/components/ProjectComp";
+import SkillComp from "@/components/SkillComp";
 import { getAPI } from "../axios-api";
 
 export default {
   name: "IndexView",
   components: {
     ProjectComp,
+    SkillComp,
   },
   data() {
     return {
       projects: [],
+      skills: [
+        { title: "fa-solid fa-code", current: true, description: "Desarrollo Web" },
+        { title: "fa-solid fa-check", current: false, description: "Encontrar soluciones" },
+        { title: "fa-solid fa-gears", current: false, description: "Perseverancia" },
+        { title: "fa-solid fa-lightbulb", current: false, description: "Creatividad" },
+        { title: "fa-solid fa-cubes", current: false, description: "Aplicaciones organizadas" },
+      ],
+      i: 0,
     };
+  },
+  methods: {
+    animate() {
+      let skill = this.skills;
+      if (this.i < skill.length - 1) {
+        skill[this.i + 1].current = true;
+        skill[this.i].current = false;
+        this.i++;
+      } else {
+        this.i = 0;
+        skill[this.i].current = true;
+        skill[skill.length - 1].current = false;
+      }
+    },
+  },
+  mounted: function () {
+    this.timer = setInterval(() => {
+      this.animate();
+    }, 5000);
   },
   created() {
     getAPI
       .get("/proyectos/")
       .then((response) => {
         this.projects = response.data;
-        // console.log(this.projects);
       })
       .catch((err) => {
         console.log(err);

@@ -1,17 +1,17 @@
 <template>
   <main>
-    <NavBar />
+    <!-- <NavBar /> -->
     <RouterView />
   </main>
 </template>
 
 <script>
-import NavBar from "@/components/NavBar.vue";
+// import NavBar from "@/components/NavBar.vue";
 
 export default {
   name: "PortfolioLayout",
-  components: {
+  /* components: {
     NavBar,
-  },
+  }, */
 };
 </script>
