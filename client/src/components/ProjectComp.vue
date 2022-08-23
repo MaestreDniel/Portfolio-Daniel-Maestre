@@ -5,8 +5,8 @@
     <div class="card-body">
       <h5 class="card-title">{{ project.title }}</h5>
       <p class="card-text">{{ project.content }}</p>
-      <a href="#" class="btn btn-primary mx-2">Ver proyecto</a>
-      <a href="#" class="btn btn-outline-primary mx-2">Más detalles</a>
+      <a :href="project.url" target="_blank" rel="noreferrer noopener" class="btn btn-primary mx-2">Ver proyecto <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      <a href="#" class="btn btn-custom mx-2">Más detalles</a>
     </div>
   </div>
   <!-- Fin Proyecto -->
@@ -18,7 +18,8 @@ export default {
   props: ["project"],
   data() {
     return {
-      pathimages: "https://danielmaestre.es",
+      // pathimages: "https://danielmaestre.es",
+      pathimages: "http://127.0.0.1:8000",
     };
   },
 };

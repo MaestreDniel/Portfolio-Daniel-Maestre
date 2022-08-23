@@ -1,0 +1,46 @@
+.btn, .btn-lg {
+  border: 2px solid transparent;
+}
+
+.btn:focus,
+.btn:active,
+.btn:active:focus {
+  box-shadow: none;
+}
+
+.btn-custom {
+  border: 2px solid $primary;
+  color: $primary;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
+  -webkit-transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
+  -moz-transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
+  -ms-transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
+  -o-transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
+}
+
+.btn-custom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: $primary;
+  z-index: -1;
+  transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
+  -webkit-transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
+  -moz-transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
+  -ms-transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
+  -o-transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
+}
+
+.btn-custom:hover {
+  color: #000000;
+}
+
+.btn-custom:hover::before {
+  width: 100%;
+}

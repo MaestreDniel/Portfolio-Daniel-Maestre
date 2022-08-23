@@ -25,6 +25,7 @@ class Project(models.Model):
     title = models.CharField(max_length=250)
     thumbnail = models.ImageField(upload_to=user_directory_path, blank=True, null=True)
     content = models.TextField()
+    url = models.CharField(max_length=250, null=True)
     slug = models.SlugField(max_length=250, unique_for_date='published', null=False, unique=True)
     published = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='post_user')

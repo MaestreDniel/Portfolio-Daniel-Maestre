@@ -1,22 +1,22 @@
 <template>
   <div class="container-fluid text-start text-light bg-main">
-    <div class="row d-flex viewport-h-100 align-content-center justify-content-around mx-5">
-      <h1 class="col-12 transition-one my-3" @click="animate">Tus ideas: deste tu mente hasta la web.</h1>
-      <p class="col-12 transition-one my-3">
-        Soy Daniel Maestre. Me dedico al <b>desarrollo web</b> y soy de Palma de Mallorca. Tengo habilidad tanto para
-        front-end como para back-end. Soy alguien versátil para las tecnologías y me mantengo
-        siempre al día para afrontar los retos de esta profesión.
+    <div class="row d-flex viewport-h-100 align-content-center justify-content-around mx-2 mx-sm-5">
+      <h1 class="col-12 transition-1 my-3">Tus ideas: desde tu mente hasta la web.</h1>
+      <p class="col-12 transition-1 my-3">
+        Soy Daniel Maestre. Me dedico al <b>desarrollo web</b> y soy de Palma de Mallorca. Tengo
+        habilidad tanto para front-end como para back-end. Soy alguien versátil para las tecnologías
+        y me mantengo siempre al día para afrontar los retos de esta profesión.
       </p>
       <div class="my-4">
-        <a href="#" class="btn btn-primary me-2">Saber más</a>
-        <a href="#" class="btn btn-outline-primary mx-2">Quiero contactar</a>
+        <a href="#" class="btn btn-lg btn-primary transition-1-delay-1 me-2">Saber más</a>
+        <a href="#" class="btn btn-lg btn-custom transition-1-delay-1 mx-2">Quiero contactar</a>
       </div>
     </div>
   </div>
   <div class="container-fluid text-center text-light bg-main-grad">
-    <h2>He desarrollado estos proyectos:</h2>
-    <section class="container">
-      <div class="row row-cols-1 row-cols-md-3 g-4">
+    <section class="container my-5">
+      <h2>He desarrollado estos proyectos:</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 g-4">
         <article v-for="project in projects" :key="project.id" class="col">
           <ProjectComp :project="project" />
         </article>

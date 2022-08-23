@@ -1,5 +1,5 @@
 <template>
-  <article class="transition-one my-5">
+  <article class="transition-1 my-5">
     <!-- <div><i class="big-icon my-5" :class="skill.title + ' ' + skill.hover"></i></div> -->
     <div class="align-self-start">
       <i class="big-icon my-5" :class="skill.title"></i>
