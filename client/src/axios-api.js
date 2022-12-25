@@ -1,11 +1,15 @@
 import axios from 'axios'
 
+let baseURL;
+
+if (process.env.NODE_ENV === 'development') {
+    baseURL = process.env.VUE_APP_API_MAIN_URL_DEV;
+} else {
+    baseURL = process.env.VUE_APP_API_MAIN_URL_PROD;
+}
+
 const getAPI = axios.create({
-    /**
-     * * baseURL: 'http://127.0.0.1:8000', En local, configurar esta dirección
-     */
-    baseURL: 'http://127.0.0.1:8000',
-    // baseURL: 'https://danielmaestre.es/api',
+    baseURL: baseURL,
     timeout: 3000,
 })
 
