@@ -17,10 +17,15 @@ export default {
   name: "ProjectComp",
   props: ["project"],
   data() {
-    return {
-      // pathimages: "https://danielmaestre.es",
-      pathimages: "http://127.0.0.1:8000",
-    };
+    if (process.env.NODE_ENV === 'development') {
+      return {
+        pathimages: process.env.VUE_APP_API_MAIN_URL_DEV
+      };
+    } else {
+      return {
+        pathimages: "https://danielmaestre.es"
+      };
+    }
   },
 };
 </script>
