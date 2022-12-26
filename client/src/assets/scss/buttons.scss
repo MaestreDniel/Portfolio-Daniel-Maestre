@@ -13,34 +13,26 @@
   color: $primary;
   z-index: 1;
   position: relative;
-  overflow: hidden;
-  transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
-  -webkit-transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
-  -moz-transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
-  -ms-transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
-  -o-transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
-}
-
-.btn-custom::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0;
-  background-color: $primary;
-  z-index: -1;
-  transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
-  -webkit-transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
-  -moz-transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
-  -ms-transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
-  -o-transition: cubic-bezier(0.33, 1, 0.68, 1) all 350ms;
 }
 
 .btn-custom:hover {
-  color: #000000;
+  animation: border-glow 2s ease-in-out infinite;
+  color: $primary-300;
+  border: 2px double $primary-300;
 }
 
 .btn-custom:hover::before {
   width: 100%;
+}
+
+@keyframes border-glow {
+  0% {
+    border-color: $primary;
+  }
+  50% {
+    border-color: $primary-300;
+  }
+  100% {
+    border-color: $primary;
+  }
 }

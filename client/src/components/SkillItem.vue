@@ -10,7 +10,9 @@
 
 <script>
 export default {
-  name: "SkillComp",
-  props: ["skill"],
+  name: "SkillItem",
+  props: {
+    skill: Object
+  }
 };
 </script>

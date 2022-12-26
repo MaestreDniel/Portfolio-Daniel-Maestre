@@ -14,8 +14,10 @@
 
 <script>
 export default {
-  name: "ProjectComp",
-  props: ["project"],
+  name: "ProjectItem",
+  props: {
+    project: Object
+  },
   data() {
     if (process.env.NODE_ENV === 'development') {
       return {
