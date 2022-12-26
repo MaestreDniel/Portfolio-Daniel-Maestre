@@ -1,0 +1,35 @@
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $primary $gray-600;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  background-color: $gray-600;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: $gray-600;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: $gray-600;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: $primary;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: $primary-500;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: $primary-300;
+}

@@ -34,6 +34,8 @@ $gray-800: #383838;
 $gray-900: #212121;
 
 @import 'buttons.scss';
+@import 'scrollbar.scss';
+@import 'animations.scss';
 
 .bg-main {
   background: url(../portada_1.jpg) repeat top center;

@@ -1,0 +1,25 @@
+$charNum: 40;
+$charWidth: 40ch;
+
+
+.typewriter {
+  display: block;
+  font-family: monospace;
+  white-space: nowrap;
+  border-right: 4px solid;
+  width: $charWidth;
+  animation: typing 4s steps($charNum), blink .5s infinite step-end alternate;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% { 
+    border-color: transparent;
+  }
+}
