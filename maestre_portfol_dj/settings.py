@@ -38,6 +38,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,8 +48,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'portfolio',
     'rest_framework',
-    'rest_framework.authtoken',
-    # 'webpack_loader',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -153,6 +153,11 @@ USE_I18N = True
 
 USE_TZ = True
 
+gettext = lambda s: s
+LANGUAGES = (
+    ('es', gettext('Spanish')),
+    ('en', gettext('English')),
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/

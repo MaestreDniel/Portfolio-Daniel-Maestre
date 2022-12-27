@@ -1,13 +1,12 @@
 <template>
-  <h1 class="col-12 typewriter my-3">{{ $t("index.slogan") }}</h1>
+  <h1 class="col-12 typewriter my-3">{{ text }}</h1>
 </template>
 
 <script>
   export default {
   name: "TypewriterItem",
-  /* data() {
-    return {
-    };
-  }, */
+  props: {
+    text: String
+  }
 };
 </script>
