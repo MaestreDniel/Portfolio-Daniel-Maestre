@@ -73,7 +73,7 @@ export default {
   },
   created() {
     getAPI
-      .get("/proyectos/")
+      .get("/projects/")
       .then((response) => {
         this.projects = response.data;
       })

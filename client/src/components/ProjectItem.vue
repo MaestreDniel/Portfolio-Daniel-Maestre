@@ -8,7 +8,9 @@
         {{ $t("projectItem.view") }} 
         <i class="fa-solid fa-arrow-up-right-from-square"></i>
       </a>
-      <a href="#" class="btn btn-custom mx-2">{{ $t("projectItem.detail") }} </a>
+      <RouterLink :to="'/projects/' + project.slug" class="btn btn-custom mx-2">
+        {{ $t("projectItem.detail") }}
+      </RouterLink>
     </div>
   </div>
 </template>

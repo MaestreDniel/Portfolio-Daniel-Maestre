@@ -13,7 +13,7 @@ def index(request):
 
     return render(request, 'portfolio/index.html', context)
 
-class PortfolioListView(APIView):
+class ProjectListView(APIView):
     def get(self, request, *args, **kwargs):
         projects = Project.projectobjects.all()[0:4] # Pagination with 0:4
 
@@ -30,9 +30,9 @@ class ProjectDetailView(APIView):
     def get(self, request, project_slug, *args, **kwargs):
         project = get_object_or_404(Project, slug=project_slug)
 
-        """ if 'HTTP_ACCEPT_LANGUAGE' in self.request.META:
+        if 'HTTP_ACCEPT_LANGUAGE' in self.request.META:
             lang = self.request.META['HTTP_ACCEPT_LANGUAGE']
-            translation.activate(lang) """
+            translation.activate(lang)
         
         serializer = ProjectSerializer(project)
         return Response(serializer.data)

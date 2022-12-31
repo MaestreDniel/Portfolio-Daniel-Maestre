@@ -1,8 +1,18 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
+  devServer: {
+    historyApiFallback: {
+      rewrites: [
+        { 
+          from: /./, 
+          to: '/' 
+        },
+      ],
+    }
+  },
   transpileDependencies: true,
-  publicPath: './',
-  chainWebpack: config => {
+  publicPath: '/',
+  chainWebpack: config => {   
     config
       .plugin('html')
       .tap(args => {
