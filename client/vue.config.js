@@ -11,7 +11,7 @@ module.exports = defineConfig({
     }
   },
   transpileDependencies: true,
-  publicPath: '/',
+  publicPath: '/', // Serve application in root url
   chainWebpack: config => {   
     config
       .plugin('html')
