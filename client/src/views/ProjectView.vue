@@ -1,13 +1,11 @@
 <template>
   <div class="">
     <h1>
-      Ha funcionado
-      <span class="">{{ $route.params.title }}</span>
+      Ha funcionado {{ $route.params.slug }}
     </h1>
     <article v-for="project in projects" :key="project.id" class="col">
       <ProjectItem :project="project" />
     </article>
-    <div class="">{{ $route.params.content }}</div>
   </div>
 </template>
 

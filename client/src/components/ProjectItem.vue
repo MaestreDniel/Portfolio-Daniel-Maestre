@@ -1,15 +1,26 @@
 <template>
   <div class="card h-100 bg-dark">
-    <img :src="pathimages + project.thumbnail" class="card-img-top" alt="..." />
+    <img :src="pathimages + project.thumbnail" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{ project.title }}</h5>
-      <p class="card-text">{{ project.content }}</p>
-      <a :href="project.url" target="_blank" rel="noreferrer noopener" class="btn btn-primary mx-2">
+      <h5 class="card-title">
+        {{ project.title }}
+      </h5>
+      <p class="card-text">
+        {{ project.content }}
+      </p>
+      <a
+        :href="project.url"
+        target="_blank"
+        rel="noreferrer noopener"
+        class="btn btn-primary mx-2"
+      >
         {{ $t("projectItem.view") }} 
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        <i class="fa-solid fa-arrow-up-right-from-square" />
       </a>
       <RouterLink 
-        :to="{ name: 'project.show', params: { slug: project.slug } }" class="btn btn-custom mx-2">
+        :to="{ name: 'project.show', params: { slug: project.slug } }"
+        class="btn btn-custom mx-2"
+      >
         {{ $t("projectItem.detail") }}
       </RouterLink>
     </div>
@@ -20,7 +31,10 @@
 export default {
   name: "ProjectItem",
   props: {
-    project: Object
+    project: {
+      type: Object,
+      // default: 
+    }
   },
   data() {
     if (process.env.NODE_ENV === 'development') {

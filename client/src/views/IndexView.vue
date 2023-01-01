@@ -2,7 +2,9 @@
   <div class="container-fluid text-start text-light bg-main">
     <div class="row d-flex viewport-h-100 align-content-center justify-content-around mx-2 mx-sm-5">
       <TypewriterItem :text="$t('index.slogan')" />
-      <p class="col-12 transition-1 my-3">{{ $t("index.summary") }}</p>
+      <p class="col-12 transition-1 my-3">
+        {{ $t("index.summary") }}
+      </p>
       <div class="my-4">
         <a href="#projects" class="btn btn-lg btn-primary transition-1-delay-1 me-2">{{ $t("index.more") }}</a>
         <a href="#" class="btn btn-lg btn-custom transition-1-delay-1 mx-2">{{ $t("index.contact") }}</a>
@@ -52,20 +54,6 @@ export default {
       i: 0, */
     };
   },
-  methods: {
-    /* animate() {
-      let skill = this.skills;
-      if (this.i < skill.length - 1) {
-        skill[this.i + 1].current = true;
-        skill[this.i].current = false;
-        this.i++;
-      } else {
-        this.i = 0;
-        skill[this.i].current = true;
-        skill[skill.length - 1].current = false;
-      }
-    }, */
-  },
   mounted() {
     /* this.timer = setInterval(() => {
       this.animate();
@@ -80,6 +68,20 @@ export default {
       .catch((err) => {
         console.log(err);
       });
+  },
+  methods: {
+    /* animate() {
+      let skill = this.skills;
+      if (this.i < skill.length - 1) {
+        skill[this.i + 1].current = true;
+        skill[this.i].current = false;
+        this.i++;
+      } else {
+        this.i = 0;
+        skill[this.i].current = true;
+        skill[skill.length - 1].current = false;
+      }
+    }, */
   },
 };
 </script>

@@ -1,7 +1,9 @@
 <template>
-  <h1>Ups, no he podido encontrar esta página</h1>
+  <h1>Ups, no he podido encontrar la página {{ $route.fullPath }}</h1>
   <h1>404</h1>
-  <RouterLink :to="{ name: 'index' }">Index</RouterLink>
+  <RouterLink :to="{ name: 'index' }">
+    Index
+  </RouterLink>
 </template>
 
 <script>
