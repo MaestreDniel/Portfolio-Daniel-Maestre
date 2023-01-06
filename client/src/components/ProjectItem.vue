@@ -5,7 +5,7 @@
       <h5 class="card-title">
         {{ project.title }}
       </h5>
-      <p class="card-text">
+      <p class="card-text opacity-80">
         {{ project.content }}
       </p>
       <a
@@ -33,7 +33,7 @@ export default {
   props: {
     project: {
       type: Object,
-      // default: 
+      required: true
     }
   },
   data() {

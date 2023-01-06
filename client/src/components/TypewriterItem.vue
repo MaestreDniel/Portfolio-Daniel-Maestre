@@ -1,6 +1,9 @@
 <template>
-  <h1 class="col-12 typewriter my-3">
-    {{ text }}
+  <h1 class="col-12 col-sm-9 my-3">
+    {{ slogan }}
+    <span class="typewriter">
+      {{ text }}
+    </span>
   </h1>
 </template>
 
@@ -8,9 +11,13 @@
   export default {
   name: "TypewriterItem",
   props: {
+    slogan: {
+      type: String,
+      required: true
+    },
     text: {
       type: String,
-      default: "Tus ideas: desde tu mente hasta la web."
+      required: true
     }
   }
 };

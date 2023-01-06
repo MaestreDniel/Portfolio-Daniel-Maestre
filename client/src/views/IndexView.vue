@@ -1,17 +1,17 @@
 <template>
-  <div class="container-fluid text-start text-light bg-main">
-    <div class="row d-flex viewport-h-100 align-content-center justify-content-around mx-2 mx-sm-5">
-      <TypewriterItem :text="$t('index.slogan')" />
-      <p class="col-12 transition-1 my-3">
+  <div class="container-fluid text-start text-light text-center bg-main-grad">
+    <div class="row d-flex viewport-h-100 align-content-center justify-content-around mx-2 mx-sm-5 transition-1">
+      <TypewriterItem :slogan="$t('index.slogan')" :text="$t('typewriterItem.text')" />
+      <p class="col-12 col-sm-9 my-3 opacity-80">
         {{ $t("index.summary") }}
       </p>
       <div class="my-4">
-        <a href="#projects" class="btn btn-lg btn-primary transition-1-delay-1 me-2">{{ $t("index.more") }}</a>
-        <a href="#" class="btn btn-lg btn-custom transition-1-delay-1 mx-2">{{ $t("index.contact") }}</a>
+        <a href="#projects" class="btn btn-lg btn-primary mx-2">{{ $t("index.more") }}</a>
+        <a href="#" class="btn btn-lg btn-custom mx-2">{{ $t("index.contact") }}</a>
       </div>
     </div>
   </div>
-  <div class="container-fluid text-center text-light bg-main-grad">
+  <div class="container-fluid text-center text-light">
     <section id="projects" class="container my-5">
       <h2>{{ $t("index.projects") }}</h2>
       <div class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 g-4">

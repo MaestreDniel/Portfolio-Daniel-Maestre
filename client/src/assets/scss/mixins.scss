@@ -1,0 +1,23 @@
+@mixin opacity($value) {
+  opacity: calc($value / 100);
+}
+
+@for $i from 0 through 10 {
+  $value: $i * 10;
+  .opacity-#{$value} { 
+    @include opacity($value); 
+  }
+}
+
+$seconds: 0s;
+
+@mixin transition($value) {
+  animation: fadeIn $value + $seconds ease-in;
+  -webkit-animation: fadeIn $value + $seconds ease-in;
+}
+
+@for $i from 1 through 3 {
+  .transition-#{$i} { 
+    @include transition($i); 
+  }
+}

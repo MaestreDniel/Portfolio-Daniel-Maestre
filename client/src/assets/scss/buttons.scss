@@ -24,15 +24,3 @@
 .btn-custom:hover::before {
   width: 100%;
 }
-
-@keyframes border-glow {
-  0% {
-    border-color: $primary;
-  }
-  50% {
-    border-color: $primary-300;
-  }
-  100% {
-    border-color: $primary;
-  }
-}

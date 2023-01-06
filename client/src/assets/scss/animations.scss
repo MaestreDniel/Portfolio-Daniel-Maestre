@@ -1,14 +1,10 @@
-$charNum: 40;
-$charWidth: 40ch;
-
+$charNum: 3;
+$charWidth: 3ch;
 
 .typewriter {
-  display: block;
-  font-family: monospace;
-  white-space: nowrap;
   border-right: 4px solid;
   width: $charWidth;
-  animation: typing 4s steps($charNum), blink .5s infinite step-end alternate;
+  animation: typing 0.5s steps($charNum), blink .5s infinite step-end alternate;
   overflow: hidden;
 }
 
@@ -21,5 +17,26 @@ $charWidth: 40ch;
 @keyframes blink {
   50% { 
     border-color: transparent;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes border-glow {
+  0% {
+    border-color: $primary;
+  }
+  50% {
+    border-color: $primary-200;
+  }
+  100% {
+    border-color: $primary;
   }
 }
