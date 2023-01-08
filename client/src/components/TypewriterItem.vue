@@ -1,24 +1,44 @@
 <template>
-  <h1 class="col-12 col-sm-9 my-3">
-    {{ slogan }}
-    <span class="typewriter">
-      {{ text }}
-    </span>
-  </h1>
+  <span id="typewriter" class="caret" />
 </template>
 
 <script>
-  export default {
+import typewriterItem from "@/locales/es/components/typewriter.item";
+export default {
   name: "TypewriterItem",
-  props: {
-    slogan: {
-      type: String,
-      required: true
-    },
-    text: {
-      type: String,
-      required: true
+  data() {
+    return {
+      i: 0,
+      key: 0
     }
-  }
+  },
+  computed: {
+    keywordsList() {
+      const messages = Object.keys(typewriterItem);
+      let keywords = [];
+      messages.forEach(key => {
+        keywords.push(this.$t(`typewriterItem.${key}`))
+      });
+      return keywords;
+    }
+  },
+  mounted() {
+    setInterval(this.typing, 150);
+    setInterval(this.clear, 5000);
+  },
+  methods: {
+    typing() {
+      let keyword = this.keywordsList[this.key];
+      if (this.i < keyword.length) {
+        document.getElementById("typewriter").innerHTML += keyword.charAt(this.i);
+        this.i++;
+      }
+    },
+    clear() {
+      this.key = (this.key + 1) % this.keywordsList.length;
+      document.getElementById("typewriter").innerHTML = "";
+      this.i = 0;
+    }
+  } 
 };
 </script>

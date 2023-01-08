@@ -1,7 +1,11 @@
 <template>
   <div class="container-fluid text-start text-light text-center bg-main-grad">
     <div class="row d-flex viewport-h-100 align-content-center justify-content-around mx-2 mx-sm-5 transition-1">
-      <TypewriterItem :slogan="$t('index.slogan')" :text="$t('typewriterItem.text')" />
+      <h1 class="col-12 col-sm-9 my-3 fw-bolder title-xl">
+        {{ $t('index.callToAction.first') }} <br>
+        <TypewriterItem /> <br>
+        {{ $t('index.callToAction.second') }}
+      </h1>
       <p class="col-12 col-sm-9 my-3 opacity-80">
         {{ $t("index.summary") }}
       </p>
@@ -39,25 +43,12 @@ export default {
   components: {
     ProjectItem,
     TypewriterItem,
-    // SkillItem,
+    // SkillItem
   },
   data() {
     return {
-      projects: [],
-      /* skills: [
-        { title: "fa-solid fa-code", current: true, description: "Desarrollo Web" },
-        { title: "fa-solid fa-check", current: false, description: "Encontrar soluciones" },
-        { title: "fa-solid fa-gears", current: false, description: "Perseverancia" },
-        { title: "fa-solid fa-lightbulb", current: false, description: "Creatividad" },
-        { title: "fa-solid fa-cubes", current: false, description: "Aplicaciones organizadas" },
-      ],
-      i: 0, */
+      projects: []
     };
-  },
-  mounted() {
-    /* this.timer = setInterval(() => {
-      this.animate();
-    }, 5000); */
   },
   created() {
     getAPI
@@ -68,20 +59,6 @@ export default {
       .catch((err) => {
         console.log(err);
       });
-  },
-  methods: {
-    /* animate() {
-      let skill = this.skills;
-      if (this.i < skill.length - 1) {
-        skill[this.i + 1].current = true;
-        skill[this.i].current = false;
-        this.i++;
-      } else {
-        this.i = 0;
-        skill[this.i].current = true;
-        skill[skill.length - 1].current = false;
-      }
-    }, */
-  },
+  }
 };
 </script>
