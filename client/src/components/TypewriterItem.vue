@@ -9,7 +9,9 @@ export default {
   data() {
     return {
       i: 0,
-      key: 0
+      key: 0,
+      typingInterval: null,
+      deleteInterval: null
     }
   },
   computed: {
@@ -23,8 +25,14 @@ export default {
     }
   },
   mounted() {
-    setInterval(this.typing, 150);
-    setInterval(this.clear, 5000);
+    setTimeout(() => {
+      this.typingInterval = setInterval(this.typing, 150);
+      this.deleteInterval = setInterval(this.clear, 5000);
+    }, 1000);
+  },
+  unmounted() {
+    clearInterval(this.typingInterval);
+    clearInterval(this.deleteInterval);
   },
   methods: {
     typing() {
