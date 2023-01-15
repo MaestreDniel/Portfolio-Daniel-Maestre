@@ -3,6 +3,9 @@
     <h1>
       Ha funcionado {{ $route.params.slug }}
     </h1>
+    <RouterLink :to="{ name: 'index' }">
+      Index
+    </RouterLink>
     <article v-for="project in projects" :key="project.id" class="col">
       <ProjectItem :project="project" />
     </article>

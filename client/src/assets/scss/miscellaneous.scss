@@ -1,7 +1,7 @@
 .bg-main {
   position: absolute;
   background: $gray-900;
-  background: linear-gradient(175deg, $gray-900 0%, $gray-700 100%);
+  background: linear-gradient(175deg, $gray-900 0%, $gray-800 100%);
 }
 
 .bg-main-grad {
@@ -20,5 +20,9 @@
 }
 
 .title-xl {
-  font-size: calc(1.5rem + 2vw);
+  font-size: calc(1.75rem + 2vw);
+}
+
+.fit-contain {
+  object-fit: contain;
 }

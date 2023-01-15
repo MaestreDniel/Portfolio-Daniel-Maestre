@@ -6,7 +6,7 @@
         <TypewriterItem /> <br>
         {{ $t('index.callToAction.second') }}
       </h1>
-      <p class="col-12 col-sm-9 my-3 opacity-80">
+      <p class="col-12 col-sm-10 col-md-8 my-3 opacity-80">
         {{ $t("index.summary") }}
       </p>
       <div class="my-4">
@@ -15,12 +15,14 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid text-center text-light">
+  <div class="container text-light">
     <section id="projects" class="container my-5">
-      <h2>{{ $t("index.projects") }}</h2>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 g-4">
-        <article v-for="project in projects" :key="project.id" class="col">
-          <ProjectItem :project="project" />
+      <h2 class="mb-5">
+        {{ $t("index.projects") }}
+      </h2>
+      <div class="row g-5">
+        <article v-for="(project, index) in projects" :key="project.id" class="my-5">
+          <ProjectItem :project="project" :index="index" />
         </article>
       </div>
     </section>
