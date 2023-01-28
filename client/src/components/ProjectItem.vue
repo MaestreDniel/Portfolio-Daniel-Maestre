@@ -48,16 +48,13 @@ export default {
       required: true
     }
   },
-  data() {
-    if (process.env.NODE_ENV === 'development') {
-      return {
-        pathimages: process.env.VUE_APP_API_MAIN_URL_DEV
-      };
-    } else {
-      return {
-        pathimages: "https://danielmaestre.es"
-      };
+  computed: {
+    pathimages() {
+      if (process.env.NODE_ENV === 'development') {
+        return process.env.VUE_APP_API_MAIN_URL_DEV;
+      }
+      return "https://danielmaestre.es";
     }
-  },
+  }
 };
 </script>
