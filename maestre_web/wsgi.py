@@ -1,5 +1,5 @@
 """
-WSGI config for maestre_portfol_dj project.
+WSGI config for maestre_web project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'maestre_portfol_dj.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'maestre_web.settings')
 
 application = get_wsgi_application()
