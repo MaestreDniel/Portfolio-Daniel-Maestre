@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from portfolio.models import Project
+from portfolio.models import Project, Work
 
-# Aquí se define cómo se representan los datos en la API
+# Serializers define how the data will be shown in the API
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
@@ -14,5 +14,18 @@ class ProjectSerializer(serializers.ModelSerializer):
             "slug",
             "published",
             "author",
-            "status",
+        )
+
+class WorkSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Work
+        fields = (
+            "id",
+            "title",
+            "company",
+            "content",
+            "slug",
+            "start_date",
+            "finish_date",
+            "published",
         )
