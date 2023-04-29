@@ -33,6 +33,22 @@ You should execute these commands in root folder `/Portfolio-Daniel-Maestre`. Py
 <!-- ### Customize configuration -->
 <!-- See [Configuration Reference](https://cli.vuejs.org/config/). -->
 
+## Updating dependencies
+
+A good practice is updating the dependencies, so the project benefits from bug fixes and security issues are prevented.
+
+### Django
+
+* Check outdated dependencies in Django: `pip list --outdated`
+* Update requirements.txt
+* Upgrade packages: `pip install -r requirements.txt --upgrade`
+
+### Node
+
+* Update node_modules: `npm update`
+
+Check that the environment is not breaking the project!
+
 ## Some Code
 
 ```js
