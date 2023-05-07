@@ -54,6 +54,7 @@ class Work(BasePost):
     company = models.CharField(max_length=250)
     start_date = models.DateField(default=date.today)
     finish_date = models.DateField(blank=True, null=True)
+    url = models.CharField(max_length=250, blank=True, null=True)
     # stack = models.JSONField()
     author = None  # Remove inherited field
     workobjects = WorkObjects()  # custom manager

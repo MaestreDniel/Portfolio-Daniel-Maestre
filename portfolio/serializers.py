@@ -24,6 +24,7 @@ class WorkSerializer(serializers.ModelSerializer):
             "title",
             "company",
             "content",
+            "url",
             "slug",
             "start_date",
             "finish_date",
