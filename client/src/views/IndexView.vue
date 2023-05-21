@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid text-start text-light text-center bg-main-grad">
     <div class="row d-flex viewport-h-100 align-content-center justify-content-around mx-2 mx-sm-5 transition-1">
-      <h1 class="col-12 col-sm-9 my-3 fw-bolder title-xl">
+      <h1 class="col-12 col-sm-9 my-3 title title-xxl">
         {{ $t('index.callToAction.first') }} <br>
         <TypewriterItem /> <br>
         {{ $t('index.callToAction.second') }}
@@ -10,14 +10,32 @@
         {{ $t("index.summary") }}
       </p>
       <div class="my-4">
-        <a href="#projects" class="btn btn-lg btn-primary mx-2">{{ $t("index.more") }}</a>
-        <a href="#" class="btn btn-lg btn-custom mx-2">{{ $t("index.contact") }}</a>
+        <a href="#works" class="btn btn-lg btn-primary mx-2">{{ $t("index.more") }}</a>
+        <!-- <a href="#" class="btn btn-lg btn-custom mx-2">{{ $t("index.contact") }}</a> -->
       </div>
     </div>
   </div>
-  <div class="container text-light">
-    <section id="projects" class="container my-5">
-      <h2 class="mb-5">
+  <div class="container text-light px-4">
+    <section id="works" class="container py-3">
+      <h2 class="title title-xl mb-5 pb-4">
+        {{ $t("index.works") }}
+      </h2>
+      <svg height="500" width="10" class="d-none d-lg-block position-absolute start-50 translate-middle-x">
+        <line
+          x1="5"
+          y1="10"
+          x2="5"
+          y2="440"
+          stroke="#edfcfe"
+          stroke-width="4"
+        />
+      </svg>
+      <article v-for="(work, index) in works" :key="work.id" class="my-5">
+        <WorkItem :work="work" :index="index" />
+      </article>
+    </section>
+    <section id="projects" class="container">
+      <h2 class="title title-xl mb-5 pb-4">
         {{ $t("index.projects") }}
       </h2>
       <div class="row g-5">
@@ -26,18 +44,13 @@
         </article>
       </div>
     </section>
-    <!-- <div class="d-flex viewport-h-100 justify-content-center align-items-center">
-      <div v-for="skill in skills" :key="skill.title">
-        <SkillItem v-show="skill.current" :skill="skill" class="align-self-start" />
-      </div>
-    </div> -->
   </div>
 </template>
 
 <script>
 import ProjectItem from "@/components/ProjectItem";
 import TypewriterItem from "@/components/TypewriterItem";
-// import SkillItem from "@/components/SkillItem";
+import WorkItem from "@/components/WorkItem"
 import { getAPI } from "../axios-api";
 
 export default {
@@ -45,11 +58,12 @@ export default {
   components: {
     ProjectItem,
     TypewriterItem,
-    // SkillItem
+    WorkItem
   },
   data() {
     return {
-      projects: []
+      projects: [],
+      works: []
     };
   },
   created() {
@@ -57,6 +71,15 @@ export default {
       .get("/projects/")
       .then((response) => {
         this.projects = response.data;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    
+    getAPI
+      .get("/works/")
+      .then((response) => {
+        this.works = response.data;
       })
       .catch((err) => {
         console.log(err);

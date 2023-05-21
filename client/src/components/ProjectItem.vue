@@ -5,7 +5,12 @@
       'd-lg-flex flex-row-reverse g-4': index % 2 !== 0
     }"
   >
-    <div class="container-image m-4">
+    <div
+      :class="{
+        'container-image me-lg-5': index % 2 === 0,
+        'container-image ms-lg-5': index % 2 !== 0
+      }"
+    >
       <RouterLink 
         :to="{ name: 'project.show', params: { slug: project.slug } }"
         class="overlay-image-link"
@@ -16,8 +21,14 @@
       </RouterLink>
       <img :src="pathimages + project.thumbnail" class="col-12 fit-contain rounded-3" alt="...">
     </div>
-    <div class="col-12 col-lg-6 p-4">
-      <h2 class="mb-3 title-link">
+    <div 
+      class="col-12 col-lg-6"
+      :class="{
+        'ps-lg-5': index % 2 === 0,
+        'pe-lg-5': index % 2 !== 0
+      }"
+    >
+      <h2 class="mb-4 mb-lg-4 my-4 my-lg-0 title-link">
         <a
           :href="project.url"
           target="_blank"
@@ -27,7 +38,6 @@
           <i class="fa-solid fa-arrow-up-right-from-square mx-2" />
         </a>
       </h2>
-
       <p class="card-text opacity-80">
         {{ project.content }}
       </p>
